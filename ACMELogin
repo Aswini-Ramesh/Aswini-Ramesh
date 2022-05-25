@@ -1,0 +1,25 @@
+package week2day1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class AcmeLogin {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver dd=new ChromeDriver();
+		dd.get("https://acme-test.uipath.com/login");
+		dd.manage().window().maximize();
+ WebElement eleusername = dd.findElement(By.xpath("//input[@name='email']"));
+ eleusername.sendKeys("kumar.testleaf@gmail.com");
+ dd.findElement(By.xpath("//input[@name='password']")).sendKeys("leaf@12");
+ dd.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
+ System.out.println("The Title is:" + dd.getTitle());
+ dd.findElement(By.linkText("Log Out")).click();
+ Thread.sleep(1000);
+ dd.close();
+	}
+
+}
