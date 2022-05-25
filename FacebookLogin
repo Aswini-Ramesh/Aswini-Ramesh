@@ -20,8 +20,8 @@ public class FaceBookLogin {
 	book.findElement(By.linkText("Create New Account")).click();
 	book.findElement(By.name("firstname")).sendKeys("Aswini");
 	book.findElement(By.name("lastname")).sendKeys("Ramesh");
-	book.findElement(By.xpath("//div[@class='uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput']/input[contains(@name, 'reg_email__')]")).sendKeys("6374984451");
-	book.findElement(By.xpath("//div[@class='uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput']/input[contains(@name,'reg_passwd__')]")).sendKeys("aswiniramesh@143");
+	book.findElement(By.xpath("//input[@name='reg_email__']")).sendKeys("6374984451");
+	book.findElement(By.xpath("//input[@name='reg_passwd__']")).sendKeys("aswiniramesh@143");
 	WebElement day=book.findElement(By.id("day"));
 	Select dd = new Select(day);
 	dd.selectByValue("1");
@@ -31,7 +31,9 @@ public class FaceBookLogin {
 	WebElement year=book.findElement(By.id("year"));
 	Select yer=new Select(year);
 	yer.selectByValue("1994");
-	book.findElement(By.xpath("/html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[7]/span/span[1]/input")). click();
+	book.findElement(By.xpath("//label[text()='Male']")). click();
+	book.close();
 		}
 
 }
+
