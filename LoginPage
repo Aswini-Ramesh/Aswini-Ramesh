@@ -29,6 +29,8 @@ public class Loginpage {
  WebElement ele= driver.findElement(By.id("createLeadForm_generalStateProvinceGeoId"));
  Select dd =new Select(ele);
  dd.selectByVisibleText("New York");
+ Thread.sleep(3000);
+ driver.findElement(By.xpath("/html/body/div[6]/div/div[1]/div[3]/div/div/div[1]/div/div/div/div")).click();
  driver.findElement(By.className("smallSubmit")).click();
  System.out.println("The Title is:" + driver.getTitle());
  driver.findElement(By.linkText("Edit")).click();
