@@ -1,0 +1,22 @@
+package week3day2;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class RemoveDuplicates {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    String text=  "We learn java basics as part of java sessions in java week1";
+    
+        //split the string using split method
+		String[] split=text.split(" ");
+		Set<String> obj = new LinkedHashSet<String>();
+		for (String text1 : split)
+		{
+			obj.add(text1);
+		}
+		
+  System.out.println(obj);
+}
+}
