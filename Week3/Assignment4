@@ -1,0 +1,26 @@
+package week3day2;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class MissingNumbers {
+
+	public static void main(String[] args) {
+		Integer[] numbers={4,6,7,2,3,1,9,10,8,8,6,2};
+		Set<Integer> n= new TreeSet<Integer>();
+		n.addAll(Arrays.asList(numbers));
+		System.out.println("Its a Ascending Order");
+		System.out.println(n);
+		List<Integer> m= new ArrayList<Integer>(n);
+		System.out.println("Missing Numbers are:\n");
+		for(int i=0;i<m.size();i++) {
+        	if(m.get(i)+1!=m.get(i+1)) {
+        		System.out.println(m.get(i)+1);
+		}2
+
+}
+}
+}
