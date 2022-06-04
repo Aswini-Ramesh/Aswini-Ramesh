@@ -1,0 +1,22 @@
+package week3day2;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class PrintOnlyUniqueCharacters {
+
+	public static void main(String[] args) {
+		String input = "babu";
+        // converting string into characterarray
+		char[] str =input.toCharArray();
+		
+		//Create set of Character
+		Set<Character> unique=new HashSet<Character>();
+		unique.add('b');
+		unique.add('a');
+		unique.add('b');
+		unique.add('u');
+		unique.remove('b');
+       System.out.println(unique);
+	}
+}
