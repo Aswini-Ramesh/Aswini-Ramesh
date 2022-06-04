@@ -1,0 +1,68 @@
+//Interface 1
+package week3day2;
+
+public interface Language {
+	public void Java(int i); 
+ }
+
+
+//Interface 2
+package week3day2;
+
+public interface TestTool extends Language{
+public void Selenium();
+}
+package week3day2;
+
+
+// Creating Abstract class
+public abstract class MultipleLanguage implements TestTool{
+ 
+	public void python() {
+		
+	
+}
+public abstract boolean ruby();{
+
+}
+
+public void Java(int i) {
+	
+}
+2public void Selenium() {
+	
+}
+}
+
+//class to extends 
+package week3day2;
+
+public class Automation extends MultipleLanguage{
+ 
+
+			public static void main(String[] args) {
+	Automation n=new Automation();
+	n.ruby();
+	n.Selenium();
+	n.Java();
+			
+			}
+
+	public void Selenium() {
+		System.out.println("selenuim");
+		
+	}
+
+	public void Java() {
+		System.out.println("java");
+		
+		
+	}
+
+	@Override
+	public boolean ruby() {
+     System.out.println("ruby");
+     return true;
+	}
+
+}
