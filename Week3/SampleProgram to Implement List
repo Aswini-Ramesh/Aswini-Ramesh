@@ -1,0 +1,63 @@
+package week3day2;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class AjioCom {
+	
+	public static void main(String[] args) throws InterruptedException {
+	
+			// TODO Auto-generated method stub
+			WebDriverManager.chromedriver().setup();
+			// Step 2: Instantaite the ChromeDriver
+			ChromeDriver driver = new ChromeDriver();
+			
+			// Maximise the screen
+			driver.manage().window().maximize();
+			// Loads a new web page in the current browser window
+			driver.get("https://www.ajio.com/");
+			//In the search box, type as "bags" and press enter
+			
+			driver.findElement(By.xpath("//input[@class='react-autosuggest__input react-autosuggest__input--open']")).sendKeys("bags", Keys.ENTER);
+			
+            driver.findElement(By.xpath("//label[@class='facet-linkname facet-linkname-genderfilter facet-linkname-Men']")).click();
+			Thread.sleep(2000);
+//			// To the left  of the screen under " Gender" click the "Men"
+			driver.findElement(By.xpath("//label[@class='facet-linkname facet-linkname-genderfilter facet-linkname-Men']")).click();
+			Thread.sleep(2000);
+//			//Under "Category" click "Fashion Bags"
+			driver.findElement(By.xpath("//label[@class='facet-linkname facet-linkname-l1l3nestedcategory facet-linkname-Men - Fashion Bags']")).click();
+			
+			// Print the count of the items Found.
+			//String totalItems = driver.findElement(By.xpath("//div[@class='length']")).getText();
+			System.out.println(driver.findElement(By.xpath("//div[@class='length']")).getText());
+	        //Get the list of brand of the products displayed in the page and print the list.
+			System.out.println(" List of Brands");
+			List<WebElement> bagBrandList = driver.findElements(By.className("brand"));
+			System.out.println(" Size :" + bagBrandList.size());
+
+			for (WebElement webElement : bagBrandList) {
+				String text = webElement.getText();
+				System.out.println(text);
+			}
+			// Get the list of names of the bags and print it
+			List<WebElement> bagNameList = driver.findElements(By.className("nameCls"));
+			System.out.println(" Size :" + bagNameList.size());
+			System.out.println(" Names of the Bags");
+			for (WebElement webElement : bagNameList) {
+				String text = webElement.getText();
+				System.out.println(text);
+			}
+			
+			
+
+		}
+
+	}
